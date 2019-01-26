@@ -17,6 +17,10 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
+  css: [
+    { src: 'bulma/bulma.sass', lang: 'sass' },
+    { src: 'font-awesome/scss/font-awesome.scss', lang: 'scss' }
+  ],
   loading: { color: '#3B8070' },
 
   plugins: [

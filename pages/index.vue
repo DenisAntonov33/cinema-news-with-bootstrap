@@ -1,13 +1,13 @@
 <template>
   <section class="container">
-    <div class="wrapper">
+    <div class="wrapper column is-four-fifths-tablet">
       <h1 class="page-title">Фильтрация новостей</h1>
-      <div class="inputs">
-        <div class="input-wrapper"><v-select :options="cities" v-model="selectedCity" @input="addTheatres"></v-select></div>
-        <div class="input-wrapper"><v-select :options="cinemas" v-model="selectedTheatre" @input="addNews"></v-select></div>
+      <div class="inputs columns is-multiline is-mobile">
+        <div class="input-wrapper column"><v-select class="select-input" :options="cities" v-model="selectedCity" @input="addTheatres"></v-select></div>
+        <div class="input-wrapper column"><v-select class="select-input" :options="cinemas" v-model="selectedTheatre" @input="addNews"></v-select></div>
       </div>
-      <div class="news">
-        <MovieNews v-for="item in news" :key="item.id" :item="item" class="news-component"/>
+      <div class="news columns">
+        <MovieNews v-for="item in news" :key="item.id" :item="item" class="news-component column is-one-quarter-desktop is-one-third-tablet is-half-mobile"/>
       </div>
     </div>
   </section>
@@ -59,23 +59,19 @@ export default {
   justify-content: center;
 }
 
-.wrapper {
-  margin: 0 20% 0 20%;
-  width: 100%;
-}
-
 .page-title {
   font-family: 'Open Sans';
+  font-weight: bold;
 }
 
 .inputs {
-  display: flex;
   margin-top: 20px;
+  max-width: 100%;
 }
 
 .input-wrapper {
   margin: 10px;
-  flex: 1 1 50%;
+  width: 49%;
 }
 
 .news {
@@ -88,6 +84,26 @@ export default {
 .news-component {
   width: 22%;
 }
+
+.select-input,
+.dropdown-toggle {
+  width: 100%;
+}
+
+@media screen and (max-width: 425px) {
+  .news-component {
+    flex: none;
+    width: 100%;
+  }
+}
+
+/*@media screen and (max-width: 768px) {
+  .input-wrapper {
+    flex: none;
+    width: 100%;
+  }
+}
+*/
 
 
 </style>

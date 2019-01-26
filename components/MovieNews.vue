@@ -28,6 +28,7 @@ export default {
   line-height: 100%;
   max-height: 100%;
   max-width: 100%;
+  overflow: hidden;
 }
 
 img {
