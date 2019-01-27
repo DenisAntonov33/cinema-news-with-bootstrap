@@ -17,10 +17,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  css: [
-    { src: 'bulma/bulma.sass', lang: 'sass' },
-    { src: 'font-awesome/scss/font-awesome.scss', lang: 'scss' }
-  ],
+  css: [],
   loading: { color: '#3B8070' },
 
   plugins: [
@@ -29,7 +26,8 @@ module.exports = {
 
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'bootstrap-vue/nuxt',
   ],
   /*
   ** Build configuration

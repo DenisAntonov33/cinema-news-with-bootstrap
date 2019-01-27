@@ -1,13 +1,13 @@
 <template>
   <section class="container">
-    <div class="wrapper column is-four-fifths-tablet">
+    <div class="wrapper">
       <h1 class="page-title">Фильтрация новостей</h1>
-      <div class="inputs columns is-multiline is-mobile">
-        <div class="input-wrapper column"><v-select class="select-input" :options="cities" v-model="selectedCity" @input="addTheatres"></v-select></div>
-        <div class="input-wrapper column"><v-select class="select-input" :options="cinemas" v-model="selectedTheatre" @input="addNews"></v-select></div>
+      <div class="inputs row">
+        <div class="input-wrapper col-md"><v-select class="select-input" :options="cities" v-model="selectedCity" @input="addTheatres"></v-select></div>
+        <div class="input-wrapper col-md"><v-select class="select-input" :options="cinemas" v-model="selectedTheatre" @input="addNews"></v-select></div>
       </div>
-      <div class="news columns is-multiline is-mobile">
-        <MovieNews v-for="item in news" :key="item.id" :item="item" class="news-component column is-one-quarter-desktop is-one-third-tablet is-half-mobile"/>
+      <div class="news row">
+        <MovieNews v-for="item in news" :key="item.id" :item="item" class="news-component col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3"/>
       </div>
     </div>
   </section>
@@ -50,10 +50,6 @@ export default {
 
 <style>
 
-* {
-  box-sizing: border-box;
-}
-
 .container {
   display: flex;
   justify-content: center;
@@ -75,28 +71,16 @@ export default {
 
 .news {
   margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .news-component {
-  width: 22%;
+  margin-bottom: 10px;
 }
 
 .select-input,
 .dropdown-toggle {
   width: 100%;
 }
-
-@media screen and (max-width: 425px) {
-  .column.is-half-mobile {
-    flex: none;
-    width: 100%;
-  }
-}
-
-
 
 </style>
 
