@@ -50,6 +50,7 @@ img {
   display: flex;
   flex-direction: column;
   height: 50%;
+  justify-content: space-between;
 }
 
 .news-description {
@@ -57,10 +58,10 @@ img {
 }
 
 .news-date {
-  align-self: flex-end;
   color: grey;
   font-size: 14px;
   margin-right: 10px;
+  align-self: flex-end;
 }
 
 </style>
