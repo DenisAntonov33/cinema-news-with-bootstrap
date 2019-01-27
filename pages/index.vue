@@ -6,7 +6,7 @@
         <div class="input-wrapper column"><v-select class="select-input" :options="cities" v-model="selectedCity" @input="addTheatres"></v-select></div>
         <div class="input-wrapper column"><v-select class="select-input" :options="cinemas" v-model="selectedTheatre" @input="addNews"></v-select></div>
       </div>
-      <div class="news columns">
+      <div class="news columns is-multiline is-mobile">
         <MovieNews v-for="item in news" :key="item.id" :item="item" class="news-component column is-one-quarter-desktop is-one-third-tablet is-half-mobile"/>
       </div>
     </div>
@@ -71,7 +71,6 @@ export default {
 
 .input-wrapper {
   margin: 10px;
-  width: 49%;
 }
 
 .news {
@@ -91,19 +90,12 @@ export default {
 }
 
 @media screen and (max-width: 425px) {
-  .news-component {
+  .column.is-half-mobile {
     flex: none;
     width: 100%;
   }
 }
 
-/*@media screen and (max-width: 768px) {
-  .input-wrapper {
-    flex: none;
-    width: 100%;
-  }
-}
-*/
 
 
 </style>
